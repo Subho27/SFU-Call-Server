@@ -114,11 +114,11 @@ connections.on('connection', async socket => {
     socket.on('joinRoom', async ({ roomName, userId }, callback) => {
 
         // console.log(peers);
-        if (Object.keys(peers).length > 2) {
-          // Return a message to the caller indicating that the room is full
-          callback({ error: 'room-full' });
-          return; // Exit the function early
-        }
+        // if (Object.keys(peers).length > 2) {
+        //   // Return a message to the caller indicating that the room is full
+        //   callback({ error: 'room-full' });
+        //   return; // Exit the function early
+        // }
         // create Router if it does not exist
         // const router1 = rooms[roomName] && rooms[roomName].get('data').router || await createRoom(roomName, socket.id)
         const router1 = await createRoom(roomName, socket.id)
